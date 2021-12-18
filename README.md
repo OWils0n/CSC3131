@@ -16,7 +16,3 @@ Notable Packages: React, JWT, Redux, Axios, Bcrypt, Body-Parser, Cors, Express, 
 Further information available in package.json
 
 
-Thankyou to Javascript Mastery for providing a detailed course on how to properly create and structure a MERN Stack webapp
-
-https://www.youtube.com/watch?v=LYWgPSbPDfQ&list=RDCMUCmXmlB4-HJytD7wek0Uo97A&index=5&ab_channel=JavaScriptMastery 
-
