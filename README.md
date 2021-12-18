@@ -10,6 +10,12 @@ the load and seperate important data and functions for security.
 
 If you are in the client or server directory you can run 'npm install' followed by 'npm start' in order to start the client.
 
+The connection to the atlas database is filled by environmental variables in .env for security. The connection 
+will not be established if there is no .env . See .env.example
+
+(For the purpose of testing / marking the connection string is commented in server/index.js however this string 
+should still be formatted in a .env file if you want docker-compose to work)
+
 
 Notable Packages: React, JWT, Redux, Axios, Bcrypt, Body-Parser, Cors, Express, Mongoose, Nodemon
 

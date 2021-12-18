@@ -16,7 +16,7 @@ const auth = async (req, res, next) => {
     if (token && jwtTokenCheck) {      
       decodedData = jwt.verify(token, 'test');
       req.userId = decodedData?.id; //importantly we also populate the userId variable so it can be used in the controllers
-      // for example if the user wants to like a post we must know their id to see if they have already liked it 
+      // for example if the user wants to like a post we must know their id to see if they have already liked it  
     } 
 
     next(); //if there is no error's then we let the controllers proceed
