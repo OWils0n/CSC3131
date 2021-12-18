@@ -2,18 +2,16 @@ import { makeStyles } from '@material-ui/core/styles';
 import { deepPurple } from '@material-ui/core/colors';
 
 export default makeStyles((theme) => ({
-  mainContainer: {
-    borderRadius: 15,
-    margin: '10px 0',
-    display: 'flex',
-    flexDirection: 'row',
-    padding: '20px 50px',
-    backgroundColor: 'rgba(128,128,128,0.5)',
-    position: 'relative',
-    right: '40%',
-    bottom: '30px',
-    width: '160%',
+  appBar: {
     
+    marginBottom: '30px',
+    display: 'flex',
+    position: 'fixed', 
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    padding: '10px 50px',
+    backgroundColor: 'rgba(0,0,0,1)'
   },
   heading: {
     color: 'rgba(0,183,255, 1)',
@@ -40,34 +38,8 @@ export default makeStyles((theme) => ({
     display: 'flex',
     alignItems: 'center',
   },
-  smMargin: {
-    margin: theme.spacing(1),
-  },
   purple: {
     color: theme.palette.getContrastText(deepPurple[500]),
-    backgroundColor: deepPurple[500],
-  },
-  [theme.breakpoints.down('sm')]: {
-    appBar: {
-      padding: '10px 20px',
-    },
-    heading: {
-      display: 'none',
-    },
-    userName: {
-      display: 'none',
-    },
-    image: {
-      marginLeft: '5px',
-    },
-    toolbar: {
-      display: 'flex',
-      justifyContent: 'flex-end',
-      width: '160px',
-    },
-  },
-
-  actionDiv: {
-    textAlign: 'center',
+    backgroundColor: 'rgba(128,128,128,1)',
   },
 }));

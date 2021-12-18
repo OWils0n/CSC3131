@@ -1,6 +1,9 @@
 
 import { FETCH_ALL, CREATE , UPDATE , DELETE , LIKE } from '../constants/actionTypes';
-export default (posts = [], action) => { //add variables for the store here
+
+//The reducers define how we will change the "state" which is globally accessible part of the redux 'Store'
+// By changing the state we can send information anywhere in the program
+export default (posts = [], action) => { 
     switch (action.type) {
 
           case LIKE:

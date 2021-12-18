@@ -1,11 +1,22 @@
 import * as api from '../api';
 import { FETCH_ALL, CREATE , UPDATE , DELETE , LIKE } from '../constants/actionTypes';
 
-//the actions make USE of the api they do not directly talk with the back end 
+
+//Actions are specific exports which can be dispatched using redux 
+// Once dispatched the below functions run and make calls to the api to 
+// talk to the backend and get data.
+//The actions define how we use the api and what we do with the data
+
 export const getPosts = () => async (dispatch) => {
     try {
         const {data} = await api.fetchPosts();
+
         dispatch({type: FETCH_ALL , payload: data});
+        //dispatch is inderectly how we change the state. By dispatching an action, we effectively
+        //trigger an event which the reducers are 'listening' for. When the reducer 'hears' an action
+        //type is has a defintion for, it changes the state 
+
+
     } catch (error) {
         console.log(error.message);
     }
