@@ -35,8 +35,8 @@ jobs:
       - name: Build and push client
         uses: docker/build-push-action@v2
         with:
-          context: ./CSC3131/client
-          file: ./CSC3131/client/Dockerfile
+          context: ./client
+          file: ./client/Dockerfile
           push: true
           tags: ${{ secrets.DOCKER_HUB_USERNAME }}/client:latest
           
