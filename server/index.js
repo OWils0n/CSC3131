@@ -18,7 +18,7 @@ app.use('/user' , userRoutes);
 const CONNECTION_URL = process.env.CONNECTION_URL;
 //const CONNECTION_URL = 'mongodb+srv://Adminuser:adminpass@cluster0.fhbqc.mongodb.net/myFirstDatabase?retryWrites=true&w=majority'
 // The CONNECTION_URL is empty and will be populated by the .env file which is not saved to gitHub. This is to make sure our database connection 
-// details are not visible in the code (Connection string commented for testing)
+// details are not visible in the code (Connection string commented for testing if the env variables arent working)
 
 
 const PORT = process.env.PORT || 5000;
