@@ -1,13 +1,13 @@
 version: "3"
 services:
   client:
-    image: client
+    image: owilson/client
     container_name: client_container
     stdin_open: true
     ports:
       - "3000:3000"
   server:
-    image: server
+    image: owilson/server
     container_name: server_container
     ports:
       - "5000:5000"
