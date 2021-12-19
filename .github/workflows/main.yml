@@ -19,7 +19,7 @@ jobs:
     runs-on: ubuntu-latest
     defaults:
       run:
-        working-directory: client
+        working-directory: ./client
     steps:
       - name: checkout
         uses: actions/checkout@v2
@@ -50,7 +50,7 @@ jobs:
     runs-on: ubuntu-latest
     defaults:
       run:
-        working-directory: server
+        working-directory: ./server
     steps:
       - name: checkout
         uses: actions/checkout@v2
