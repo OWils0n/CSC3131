@@ -19,7 +19,7 @@ const Post = ({post, setCurrentId }) => { //This file defines the structure of a
     
     return (
 
-
+            // We make extensive use of the material ui core to create nice looking cards
         <Card className={classes.card}>
             <CardMedia className={classes.media} image={post.selectedFile} title={post.title} />
             <div className={classes.overlay}>

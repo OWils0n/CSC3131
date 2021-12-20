@@ -11,16 +11,21 @@ export const signin = async (req, res) => {
     const { email, password } = req.body;
 
     try {
-        const profile = await User.findOne({ email });
+        const profile = await User.findOne({ email }); //Call findOne() on the mongo model to check for an existing user with this
+        //name 
 
-        if (!profile) return res.status(404).json({ message: "User doesn't exist" });
+        if (!profile) return res.status(404).json({ message: "No Such user" });
 
-        const passwordCheck = await bcrypt.compare(password, profile.password);
+        const passwordCheck = await bcrypt.compare(password, profile.password); //Hashes the entered password and compares with
+        // the currently saved hash 
 
         if (!passwordCheck) return res.status(400).json({ message: "Invalid credentials" });
 
 
+
+
         const token = jwt.sign({ email: profile.email, id: profile._id }, 'test', { expiresIn: "1h" });
+        //Provide the user with a token for authentication once he has logged in 
 
         res.status(200).json({ result: profile, token });
     } catch (err) {
@@ -43,7 +48,7 @@ export const signup = async (req, res) => {
         res.status(201).json({ result, token });
 
     } catch (error) {
-        res.status(500).json({ message: "Something went wrong" });
+        res.status(500).json({ message: "Sign Up error" });
         
     }
 };
