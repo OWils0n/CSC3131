@@ -20,13 +20,13 @@ export const getPosts = async (req,res) => {
 
 export const createPost = async (req, res) => {
 
-    const post = req.body;
+    const post = req.body; //Receive the request and access its body
     const newPost = new PostMessage({...post, creator: req.userId, createdAt: new Date().toISOString()});
-    //create a post following the PostMessage Schema so we can enter it into the database
+    //create a post conforming to the PostMessage Model so we can enter it into the database
     try {
         await newPost.save(); //Save to database
-        res.status(201).json(newPost);
-    } catch (error) {
+        res.status(201).json(newPost); //Send back a response
+    } catch (error) { 
         res.status(409).json({message: error.message});
     }
 

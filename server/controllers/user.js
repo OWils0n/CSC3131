@@ -15,9 +15,9 @@ export const signin = async (req, res) => {
 
         if (!profile) return res.status(404).json({ message: "User doesn't exist" });
 
-        const isPasswordCorrect = await bcrypt.compare(password, profile.password);
+        const passwordCheck = await bcrypt.compare(password, profile.password);
 
-        if (!isPasswordCorrect) return res.status(400).json({ message: "Invalid credentials" });
+        if (!passwordCheck) return res.status(400).json({ message: "Invalid credentials" });
 
 
         const token = jwt.sign({ email: profile.email, id: profile._id }, 'test', { expiresIn: "1h" });
@@ -32,16 +32,10 @@ export const signup = async (req, res) => {
     const { email, password, confirmPassword, firstName, lastName } = req.body;
 
     try {
-
         const profile = await User.findOne({ email });
-
         if (profile) return res.status(400).json({ message: "User already exists" });
-
         if (password !== confirmPassword) return res.status(400).json({ message: "Passwords dont match" });
-
-
         const hashedPassword = await bcrypt.hash(password, 12);
-
         const result = await User.create({ email, password: hashedPassword, name: `${firstName} ${lastName}` });
 
         const token = jwt.sign( { email: result.email, id: result._id }, 'test', { expiresIn: "1h" } );

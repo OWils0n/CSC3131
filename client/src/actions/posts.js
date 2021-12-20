@@ -12,9 +12,9 @@ export const getPosts = () => async (dispatch) => {
         const {data} = await api.fetchPosts();
 
         dispatch({type: FETCH_ALL , payload: data});
-        //dispatch is inderectly how we change the state. By dispatching an action, we effectively
+        //dispatch is indirectly how we change the state. By dispatching an action, we effectively
         //trigger an event which the reducers are 'listening' for. When the reducer 'hears' an action
-        //type is has a defintion for, it changes the state 
+        //that is has a defintion for, it changes the state 
 
 
     } catch (error) {

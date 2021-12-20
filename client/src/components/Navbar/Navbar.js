@@ -17,31 +17,26 @@ const Navbar = () => {
 
 
 
-    const logout = () => {
-        //Dispatches a LOGOUT action for the reducers to handle
-        dispatch({ type: LOGOUT });
-    
-        history.push('/');
-    
-        setUser(null);
-    };
+   
 
     useEffect(() => { //Use effect will apply the 'effect' whenever the dependancy list is changed
         //so in this example, we reset the user variable ever time the 'location' (which represents which page the user is on)
         //changes
-    
-
         setUser(JSON.parse(localStorage.getItem('profile')));
     }, [location]);
 
 
-
+    const logout = () => {
+            //Dispatches a LOGOUT action for the reducers to handle
+            dispatch({ type: LOGOUT });
+        
+            history.push('/');
+        
+            setUser(null);
+    };
+    
     return ( //The navbar at the top 
-
-
         <AppBar className={classes.appBar}>
-
-
             <div className={classes.brandContainer}>
                 <Typography component={Link} to="/" className={classes.heading} variant="h2" align="center">Twooter</Typography>
                 <img className={classes.image} alt='LOGO NOT FOUND ' src={logo} height="60"/>

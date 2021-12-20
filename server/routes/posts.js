@@ -5,8 +5,8 @@ import { getPosts, createPost, updatePost , deletePost, likePost} from '../contr
 import auth from '../middleware/auth.js';
 
 const router = express.Router();
-//These routes are how we handle and direct the http request by looking at its
-//We loook at the type of request and path and send to the controllers respectively 
+//These routes are how we handle and direct the http request by looking at the
+// type of request and path and send to the controllers respectively 
 
 router.get('/', getPosts);
 
